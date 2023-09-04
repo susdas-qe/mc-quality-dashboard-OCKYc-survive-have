@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: frontend-quality-dashboard-tcqo
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: frontend-quality-dashboard-tcqo
+    app.kubernetes.io/part-of: mc-quality-dashboard
+  name: frontend-quality-dashboard-tcqo
+spec:
+  revisionHistoryLimit: 0
+  selector:
+    matchLabels:
+      app.kubernetes.io/instance: frontend-quality-dashboard-tcqo
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app.kubernetes.io/instance: frontend-quality-dashboard-tcqo
+    spec:
+      containers:
+      - image: image
+        imagePullPolicy: Always
+        name: container-image
+        ports:
+        - containerPort: 8081
+        resources: {}
+status: {}
